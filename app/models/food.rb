@@ -1,3 +1,3 @@
 class Food < ApplicationRecord
-	belongs_to :places
+	belongs_to :place
 end
