@@ -50,6 +50,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    dotenv (2.2.1)
     erubis (2.7.0)
     execjs (2.7.0)
     globalid (0.4.0)
@@ -150,6 +151,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
+  dotenv
   jbuilder (~> 2.5)
   jquery-rails
   pg (~> 0.18)
