@@ -1,10 +1,10 @@
 # Tendr - the Tindr of Food
 
 # Team
-[Jaun](https://github.com/zjuanz)
-[Sarah](https://github.com/sbetack)
-[Wes](https://github.com/yellowjell0)
-[Ben](https://github.com/bmartin2015)
+* [Juan](https://github.com/zjuanz)
+* [Sarah](https://github.com/sbetack)
+* [Wes](https://github.com/yellowjell0)
+* [Ben](https://github.com/bmartin2015)
 
 # Description / User Stories:
 * As a user, I can visit the homepage
