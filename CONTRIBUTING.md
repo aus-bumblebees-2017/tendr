@@ -6,6 +6,9 @@
 1. Add the upstream repositiory to your local project
 ```
 git remote add upstream https://github.com/aus-bumblebees-2017/tendr.git
+heroku git:remote -r staging -a tendr-staging
+heroku git:remote -r production -a tendr-app
+
 ```
 * Write Code
 * Commit your code and write a [good commit message](http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message)
