@@ -1,0 +1,6 @@
+<% @restaurants.each do |restaurant| %>
+<% restaurant.photos.each do |photo| %>
+<%= photo.fetch_url(1000) %>
+<% end %>
+<br>
+<% end %>
