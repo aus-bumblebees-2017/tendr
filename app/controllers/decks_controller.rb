@@ -28,7 +28,6 @@ class DecksController < ApplicationController
   end
 
   def update
-    binding.pry
   end
 
 end
