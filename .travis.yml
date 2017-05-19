@@ -2,3 +2,12 @@ language: ruby
 
 rvm:
   - 2.2.5
+
+services :
+  - postgresql
+
+script: rails spec
+
+test:
+  adapter: postgresql
+  database: tendr_test
