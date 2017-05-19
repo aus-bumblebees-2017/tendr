@@ -7,8 +7,8 @@ services :
   - postgresql
 
 before_script:
-  - rails db:create
-  - rails db:migrate
+  - rails db:create RAILS_ENV=test
+  - rails db:migrate RAILS_ENV=test
 
 script: rails spec
 
