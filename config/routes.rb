@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'users/show'
+
+  get '/decks/show', :to => 'decks#show'
+  get 'welcome/index'
+  get 'welcome/show_deck'
+  get 'welcome/show_details'
+  get 'welcome/show_history'
+  get 'welcome/show_user'
 
   devise_for :users
 
