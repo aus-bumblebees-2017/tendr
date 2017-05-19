@@ -6,6 +6,9 @@ rvm:
 services :
   - postgresql
 
+before_script:
+  - rails db:reset
+
 script: rails spec
 
 test:
