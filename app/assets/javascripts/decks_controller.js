@@ -1,6 +1,8 @@
+var deck = new Deck();
+
 $(document).ready(function() {
   console.log('ready')
-  var deck = new Deck();
+
   test = deck.fetchCards();
 
   // Swipe is not working right :(
@@ -21,8 +23,8 @@ $(document).ready(function() {
   $('#like').on('click', function(e) {
     console.log('liked');
     $('#swipe-card').animateCss('bounceOutRight');
-    var test = nextCard(deck);
-    console.log(deck.cards.length)
+    var lastCard = nextCard(deck);
+    console.log(lastCard);
   });
 
 
@@ -46,11 +48,11 @@ function nextCard(deck) {
       deck.addCard(cards[i]);
     };
   };
-  var next = deck.nextCard();
-  $("#card-image").attr('src', next.url);
-  $("#card-id").html(next.id);
-  $("#card-name").html(next.name);
-  return deck;
+  var newCard = deck.nextCard();
+  $("#card-image").attr('src', newCard.url);
+  $("#card-id").html(newCard.id);
+  $("#card-name").html(newCard.name);
+  return newCard;
 };
 
 
@@ -63,3 +65,9 @@ function nextCard(deck) {
 // var deck = new Deck(cards)
 // console.log(cards);
 // console.log(deck);
+
+function deckCallBack(resp) {
+  for (var i in resp) {
+    deck.addCard(new Card(resp[i]["id"], resp[i]["name"], resp[i]["url"]))
+  }
+}

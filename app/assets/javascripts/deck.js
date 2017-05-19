@@ -17,11 +17,7 @@ Deck.prototype.fetchCards = function() {
     data: $("input").serialize()
     })
   .done(function(resp) {
-    var cards = [];
-    for (var i in resp) {
-      cards.push(new Card(resp[i]["id"], resp[i]["name"], resp[i]["url"]))
-    }
-    return cards;
+    deckCallBack(resp);
   })
-  return request;
 }
+
