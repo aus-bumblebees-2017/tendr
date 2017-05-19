@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
   get '/decks/show', :to => 'decks#show'
+  put '/decks/:id/update', :to => 'decks#update'
   get 'welcome/index'
   get 'welcome/show_deck'
   get 'welcome/show_details'
   get 'welcome/show_history'
   get 'welcome/show_user'
 
+  post '/decks/new', :to => 'decks#create'
   devise_for :users
 
   get '/users/show/:id' => 'users#show', as: 'profile'
