@@ -1,28 +1,26 @@
 class DecksController < ApplicationController
   protect_from_forgery :except => [:update]
-	before_action :authenticate_user!
+#	before_action :authenticate_user!
 
 
   def show
-    @card = {
-      :id => 1,
-      :name => "first",
-      :url => 'http://lorempixel.com/200/200/food/'
-    }
+    @card = Food.all.sample
   end
 
   def create
-    @deck = [];
-    10.times do |count|
-      @deck << {
-        :id => count,
-        :name => "Card #{count}",
-        :url => 'http://lorempixel.com/200/200/food/'
+    json = []
+    @deck = Food.all.sample(10)
+    @deck.each do |food|
+      json_food = {
+        id: food.id,
+        name: food.place.name,
+        url: food.url
       }
+      json << json_food
     end
     respond_to do |format|
       format.json {
-        render json: @deck
+        render json: json
       }
     end
   end
