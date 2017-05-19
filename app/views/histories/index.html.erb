@@ -1,0 +1,7 @@
+<div>
+  <h1>Last Viewed</h1>
+  <h1> <%= current_user.user_name.humanize %></h1>
+  <% if @histories.any? %>
+    <%= render @histories %>
+  <% end %>
+</div>

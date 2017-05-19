@@ -6,15 +6,31 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-  </head>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag :defaults %>
   </head>
 
   <body>
 
+  <div class="nav-bar-container">
+  <% if current_user %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <%= link_to "Home", "/" %>
+    <%= link_to current_user.user_name.humanize, profile_path(current_user.id) %>
+  <% else  %>
+    <%= link_to "Login", "/users/sign_in" %>
+    <%= link_to "Register", "/users/sign_up" %>
+    <%= link_to "Home", "/" %>
+  <% end %>
+  </div>
+  <div class="devise-flash-container">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+  </div>
+=======
     <!-- Fixed navbar -->
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

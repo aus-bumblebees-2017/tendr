@@ -1,5 +1,7 @@
 class DecksController < ApplicationController
-protect_from_forgery :except => [:update]
+  protect_from_forgery :except => [:update]
+	before_action :authenticate_user!
+
 
   def show
     @card = {
@@ -28,4 +30,5 @@ protect_from_forgery :except => [:update]
   def update
     binding.pry
   end
+
 end
