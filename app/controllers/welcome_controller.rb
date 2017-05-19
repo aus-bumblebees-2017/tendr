@@ -7,4 +7,6 @@ class WelcomeController < ApplicationController
   end
   def show_history
   end
+  def show_user
+  end
 end
