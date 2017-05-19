@@ -15,9 +15,12 @@
   <div class="nav-bar-container">
   <% if current_user %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <%= link_to "Home", "/" %>
+    <%= link_to current_user.user_name.humanize, profile_path(current_user.id) %>
   <% else  %>
     <%= link_to "Login", "/users/sign_in" %>
     <%= link_to "Register", "/users/sign_up" %>
+    <%= link_to "Home", "/" %>
   <% end %>
   </div>
   <div class="devise-flash-container">

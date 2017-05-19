@@ -4,6 +4,32 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name, autofocus: true %>
+  </div>
+
+    <br><strong> <%= f.label raw("Which diet suits you?") %> </strong> <br>
+    <%= f.label :diet, "Omnivore(Eats Everything)", :value => "Omnivore" %>
+    <%= f.radio_button :diet, "Omnivore", :checked => true %>
+    <%= f.label :diet, "Pescaterian", :value => "Pescaterian" %>
+    <%= f.radio_button :diet, "Pescaterian" %>
+    <%= f.label :diet, "Vegetarian", :value => "Vegetarian" %>
+    <%= f.radio_button :diet, "Vegetarian" %>
+    </div>
+
+  <div class="field">
+    <%= f.label raw("Would you like to change your diet?") %>
+    <%= f.radio_button("resource_name", "diet", "Omnivore(Eats Everything)") %><br />
+    <%= f.radio_button("resource_name", "diet", "Pescaterian") %><br />
+    <%= f.radio_button("resource_name", "diet", "Vegetarian") %><br />
+  </div>
+
+   <div class="field">
+    <%= f.label :zipcode %><br />
+    <%= f.zipcode_field :zipcode, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>

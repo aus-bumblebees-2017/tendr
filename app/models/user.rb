@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :histories
+
+  def favorites
+    favs = []
+    self.histories.each do |history|
+      state = history.identify_state
+      favs.push(history) if state == "Favorite"
+    end
+  end
 end
