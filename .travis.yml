@@ -1,0 +1,17 @@
+language: ruby
+
+rvm:
+  - 2.2.5
+
+services :
+  - postgresql
+
+before_script:
+  - rails db:create RAILS_ENV=test
+  - rails db:migrate RAILS_ENV=test
+
+script: rails spec
+
+test:
+  adapter: postgresql
+  database: tendr_test
