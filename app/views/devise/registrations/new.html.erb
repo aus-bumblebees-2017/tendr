@@ -3,13 +3,13 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-    <br><strong> <%= f.label raw("Which diet suits you?") %> </strong> <br>
-    <%= f.label :diet, "Omnivore(Eats Everything)", :value => "Omnivore" %>
+ <br><strong> <%= f.label raw("Which diet suits you?") %> </strong> <br>
     <%= f.radio_button :diet, "Omnivore", :checked => true %>
-    <%= f.label :diet, "Pescaterian", :value => "Pescaterian" %>
+    <%= f.label :diet, "Omnivore(Eats Everything)", :value => "Omnivore" %><br>
     <%= f.radio_button :diet, "Pescaterian" %>
-    <%= f.label :diet, "Vegetarian", :value => "Vegetarian" %>
+    <%= f.label :diet, "Pescaterian", :value => "Pescaterian" %><br>
     <%= f.radio_button :diet, "Vegetarian" %>
+    <%= f.label :diet, "Vegetarian", :value => "Vegetarian" %>
     </div>
 
     <div class="field">
@@ -46,5 +46,3 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
