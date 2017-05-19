@@ -20,7 +20,7 @@ $(document).ready(function() {
   $('#hate').on("click", function(e) {
     console.log("hate!");
     $('#swipe-card').animateCss('bounceOutLeft');
-    var test = nextCard(deck)
+    var lastCard = nextCard(deck)
     deck.updateHistory(lastCard, 3)
   });
   $('#like').on('click', function(e) {

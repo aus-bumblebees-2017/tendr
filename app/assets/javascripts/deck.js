@@ -24,9 +24,9 @@ Deck.prototype.fetchCards = function() {
 Deck.prototype.updateHistory = function(card, state) {
   // Send back the result of the card
   json_card = {
-    id: card["id"],
-    name: card["name"],
-    state: state }
+    card_id: card["id"],
+    card_name: card["name"],
+    card_state: state }
   $.ajax({
     method: 'PUT',
     url: '/decks/' + card["id"] + '/update',
