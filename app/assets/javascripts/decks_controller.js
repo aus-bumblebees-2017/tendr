@@ -12,19 +12,22 @@ $(document).ready(function() {
   $("#swipe-card").on("swipeleft", function() {
     console.log("swipe left");
   })
-
+  // 1 - Save
+  // 2 - Fav
+  // 3 - Discard
 
   // Get buttons working first
   $('#hate').on("click", function(e) {
     console.log("hate!");
     $('#swipe-card').animateCss('bounceOutLeft');
     var test = nextCard(deck)
+    deck.updateHistory(lastCard, 3)
   });
   $('#like').on('click', function(e) {
     console.log('liked');
     $('#swipe-card').animateCss('bounceOutRight');
     var lastCard = nextCard(deck);
-    console.log(lastCard);
+    deck.updateHistory(lastCard, 1);
   });
 
 

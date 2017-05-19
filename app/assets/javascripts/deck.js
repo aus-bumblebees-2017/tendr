@@ -19,5 +19,18 @@ Deck.prototype.fetchCards = function() {
   .done(function(resp) {
     deckCallBack(resp);
   })
-}
+};
+
+Deck.prototype.updateHistory = function(card, state) {
+  // Send back the result of the card
+  json_card = {
+    id: card["id"],
+    name: card["name"],
+    state: state }
+  $.ajax({
+    method: 'PUT',
+    url: '/decks/' + card["id"] + '/update',
+    data: json_card
+  })
+};
 

@@ -1,4 +1,6 @@
 class DecksController < ApplicationController
+protect_from_forgery :except => [:update]
+
   def show
     @card = {
       :id => 1,
@@ -21,5 +23,9 @@ class DecksController < ApplicationController
         render json: @deck
       }
     end
+  end
+
+  def update
+    binding.pry
   end
 end
