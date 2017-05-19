@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get '/decks/show', :to => 'decks#show'
   put '/decks/:id/update', :to => 'decks#update'
   get 'welcome/index'
+
+  get '/api' => 'api#index'
+
   get 'welcome/show_deck'
   get 'welcome/show_details'
   get 'welcome/show_history'
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
 
   post '/decks/new', :to => 'decks#create'
   devise_for :users
+
 
   get '/users/show/:id' => 'users#show', as: 'profile'
   get '/places/show/:id' => 'places#show', as: 'show_place'
