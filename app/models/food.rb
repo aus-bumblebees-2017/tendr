@@ -1,5 +1,6 @@
 class Food < ApplicationRecord
 	belongs_to :place
+
   extend Api
 
   def self.populate
