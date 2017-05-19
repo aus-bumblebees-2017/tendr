@@ -185,6 +185,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   google_places
+  httparty
   jbuilder (~> 2.5)
   jquery-rails
   pg (~> 0.18)

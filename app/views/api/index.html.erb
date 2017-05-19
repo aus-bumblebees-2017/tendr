@@ -1,6 +1,8 @@
+<%= @place['result']['photos'][2]%>
+<p>************</p>
 <% @restaurants.each do |restaurant| %>
 <p>restaurant id: <%= restaurant.place_id%></p>
-
-https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRYAAAAhstOmLL2HAnFbtfR8YgYroAesckxv7ud-cX8MEtMhxNhVRnC3eozqYIKDIYaUCivboQbwDTyCf2j_1vIh28Z4MXTSKC-x3gWNbafdyxbr4rbk5Wgcbv18fVcXdfFDhE6EhDKMcgOxA7etOLHDpWLOqKuGhT4cQ4DpCcTqVs4NgKxOvfF1-Qlog&key=AIzaSyAnG2uWyNz_rLoKhDb4WdWncW3zxLq8X2Y
+<%= restaurant.photos.to_json %>
 <br>
 <% end %>
+
