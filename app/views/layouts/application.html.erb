@@ -33,7 +33,7 @@
             <a class="nav-link" href="/users/logout">Logout</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/users/show/<%= current_user.id %>"><%= current_user.name.humanize %></a>
+            <a class="nav-link" href="/users/show/<%= current_user.id %>"><%= current_user.user_name.humanize %></a>
           </li>
           <% else %>
           <li class="nav-item active">
