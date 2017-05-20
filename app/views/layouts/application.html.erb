@@ -15,39 +15,37 @@
 
   <body>
 
-  <div class="nav-bar-container">
-  <% if current_user %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <%= link_to "Home", "/" %>
-    <%= link_to current_user.user_name.humanize, profile_path(current_user.id) %>
-  <% else  %>
-    <%= link_to "Login", "/users/sign_in" %>
-    <%= link_to "Register", "/users/sign_up" %>
-    <%= link_to "Home", "/" %>
-  <% end %>
-  </div>
-  <div class="devise-flash-container">
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-  </div>
-=======
+
+
     <!-- Fixed navbar -->
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Fixed navbar</a>
+      <a class="navbar-brand" href="/foods/index">Tendr</a>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
+        <% if current_user %>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/logout">Logout</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/show/<%= current_user.id %>"><%= current_user.user_name.humanize %></a>
           </li>
+          <% else %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/sign_in">Login</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/sign_up">Register</a>
+          </li>
+          <% end %>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -58,6 +56,10 @@
 
     <!-- Begin page content -->
     <div class="container">
+  <div class="devise-flash-container">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+  </div>
     <%= yield %>
     </div>
      <footer class="footer">

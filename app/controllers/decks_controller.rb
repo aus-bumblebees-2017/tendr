@@ -1,6 +1,6 @@
 class DecksController < ApplicationController
   protect_from_forgery :except => [:update]
-	before_action :authenticate_user!
+  before_action :authenticate_user!
 
 
   def show

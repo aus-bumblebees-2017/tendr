@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
          has_many :histories
 
+  validates :user_name, presence: true,
+                        case_sensitive: false
+  validates :zipcode, presence: true, length: { :is => 5 }
+
+
   def favorites
     favs = []
     self.histories.each do |history|
