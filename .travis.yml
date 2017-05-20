@@ -7,6 +7,8 @@ services :
   - postgresql
 
 before_script:
+  - ls -l bin bin/rails
+  - cat bin/rails
   - bin/rails db:create RAILS_ENV=test
   - bin/rails db:migrate RAILS_ENV=test
 
