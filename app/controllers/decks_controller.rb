@@ -26,10 +26,9 @@ class DecksController < ApplicationController
 
   def update
     @food = Food.find_by(id: params[:id])
-    #@history = History.create(food: @food, user: current_user, state: params[:card_state])
+    @history = History.create(food: @food, user: current_user, state: params[:card_state])
     respond_to do |format|
       format.json { render json: { id: params[:id]} }
     end
   end
-
 end
