@@ -4,13 +4,17 @@
       <div id="swipe-card" class="card">
         <center>
           <div style = "position: relative; text-align: center; padding-top: 5px">
-          <%= image_tag(@card.url, id: "card-image") %>
-          <h1 id="card-name" style = "font-weight: normal; font-size: 20pt;"><%= @card.place.name %></h1>
-          <i id="hate" style = "font-size: 60pt; padding-right: 20px; color: red" class="fa fa-times" aria-hidden="true"></i><i id="like" style = "margin-top: 65px; font-size: 50pt; padding-left: 20px; color: green" class="fa fa-heart" aria-hidden="true"></i>
-        </div></center></div><!-- <--Right here is the end of the card --> </center></div>
-
-        <%= form_tag('/decks/new')do %>
-        <% end %>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <%= image_tag(@card.url, id: "card-image") %>
+            <h1 id="card-name" style = "font-weight: normal; font-size: 20pt;">
+              <%= @card.place.name %>
+            </h1>
+            <i id="hate" style = "font-size: 60pt; padding-right: 20px; color: red" class="fa fa-times" aria-hidden="true"></i>
+            <i id="like" style = "margin-top: 65px; font-size: 50pt; padding-left: 20px; color: green" class="fa fa-heart" aria-hidden="true"></i>
+          </div>
+        </center>
+      </div>
+    </center>
+  </div>
+</div>
+<%= form_tag('/decks/new')do %>
+<% end %>
