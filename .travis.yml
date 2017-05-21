@@ -17,3 +17,6 @@ script: bin/rails spec
 test:
   adapter: postgresql
   database: tendr_test
+
+notifications:
+  slack: dbc-atx:hklJPM0iXVIMt3mAYzagaZaH
