@@ -1,0 +1,20 @@
+<div data-role="page" id="place-show">
+  <div data-role="main" class="ui-content">
+    <center>
+      <div id="swipe-card" class="card">
+        <center>
+          <div style = "position: relative; text-align: center; padding-top: 5px">
+            <%= image_tag(@place.foods.sample.url, id: "card-image") %>
+            <h1 id="card-name" style = "font-weight: normal; font-size: 20pt;">
+              <%= @place.name %>
+            </h1>
+            <p>Google Raiting: <%= @place.rating %><p>
+            <p>Address: <%= link_to @place_metadata[:address], @place_metadata[:map] %></p>
+            <p>Phone: <%= @place_metadata[:phone] %></p>
+            <p><%= link_to @place_metadata[:url] %></p>
+          </div>
+        </center>
+      </div>
+    </center>
+  </div>
+</div>
