@@ -14,7 +14,7 @@ class Place < ApplicationRecord
       :address => place["result"]["formatted_address"],
       :phone => place["result"]["formatted_phone_number"],
       :map => place["result"]["url"],
-      :url => place["result"]["website"]
+      :place_url => place["result"]["website"]
     }
     return place_metadata
   end

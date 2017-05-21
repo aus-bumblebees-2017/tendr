@@ -4,14 +4,14 @@
       <div id="swipe-card" class="card">
         <center>
           <div style = "position: relative; text-align: center; padding-top: 5px">
-            <%= image_tag(@place.foods.sample.url, id: "card-image") %>
+            <%= link_to(image_tag(@last_food.url, id: "card-image"), decks_show_path) %>
             <h1 id="card-name" style = "font-weight: normal; font-size: 20pt;">
               <%= @place.name %>
             </h1>
             <p>Google Raiting: <%= @place.rating %><p>
             <p>Address: <%= link_to @place_metadata[:address], @place_metadata[:map] %></p>
             <p>Phone: <%= @place_metadata[:phone] %></p>
-            <p><%= link_to @place_metadata[:url] %></p>
+            <p><%= link_to @place_metadata[:place_url], @place_metadata[:place_url], target: :_blank %></p>
           </div>
         </center>
       </div>
