@@ -12,7 +12,7 @@
 	User.create(email: Faker::Internet.email, password: "password", user_name: Faker::Hipster.word, zipcode: Faker::Number.number(5), diet: diets.sample)
 
 	100.times do
-		Food.create(place_id: rand(1..50), google_place_id: Faker::Number.number(15))
+		Food.create(place_id: rand(1..50), url: Faker::Number.number(15))
 		History.create(food_id: rand(1..500), user_id: rand(1..10) , state: rand(1..3))
 	end
 

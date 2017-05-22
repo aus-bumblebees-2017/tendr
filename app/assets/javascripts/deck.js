@@ -1,5 +1,5 @@
-var Deck = function(cards = []) {
-  this.cards = cards;
+var Deck = function() {
+  this.cards = [];
 };
 
 Deck.prototype.addCard = function(card) {

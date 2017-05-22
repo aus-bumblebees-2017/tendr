@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     foods_path
   end
 
+  def after_sign_out_path_for(current_user)
+    root_path
+  end
+
   def configure_permitted_parameters
     added_attrs = [:user_name, :diet, :zipcode]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
