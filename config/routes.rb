@@ -13,14 +13,16 @@ Rails.application.routes.draw do
   get '/welcome/show_user', :to => 'welcome#show_user'
 
   post '/decks/new', :to => 'decks#create'
+  # devise_for :users, controllers: {
+        # registrations: 'users/registrations'
+      # }
 
 
-  
   get '/users/show/:id' => 'users#show', as: 'profile'
   get '/places/show/:id' => 'places#show', as: 'show_place'
   get '/foods/index' => 'foods#index', as: 'foods'
   get '/histories/index' => 'histories#index', as: 'histories'
-  
+
   devise_for :users
 
   devise_scope :user do
