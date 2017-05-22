@@ -3,7 +3,12 @@ class DecksController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @card = Food.all.sample
+    if current_user.last_viewed
+      @card = Food.find_by(id: current_user.last_viewed)
+      current_user.update_attribute(:last_viewed, nil)
+    else
+      @card = Food.all.sample
+    end
   end
 
   def create
@@ -13,7 +18,8 @@ class DecksController < ApplicationController
       json_food = {
         id: food.id,
         name: food.place.name,
-        url: food.url
+        url: food.url,
+        place_id: food.place.id
       }
       json << json_food
     end

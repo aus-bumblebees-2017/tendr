@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get '/decks/show', :to => 'decks#show'
   put '/decks/:id/update', :to => 'decks#update'
+  get '/places/:id', :to => 'places#show'
   get 'welcome/index'
 
   get '/api' => 'api#index'
