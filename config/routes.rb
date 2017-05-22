@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get '/decks/show', :to => 'decks#show'
   put '/decks/:id/update', :to => 'decks#update'
   get '/places/:id', :to => 'places#show'
-  get 'welcome/index'
 
   get '/api' => 'api#index'
 
@@ -15,12 +14,11 @@ Rails.application.routes.draw do
   post '/decks/new', :to => 'decks#create'
 
 
-  
+
   get '/users/show/:id' => 'users#show', as: 'profile'
   get '/places/show/:id' => 'places#show', as: 'show_place'
-  get '/foods/index' => 'foods#index', as: 'foods'
   get '/histories/index' => 'histories#index', as: 'histories'
-  
+
   devise_for :users
 
   devise_scope :user do
