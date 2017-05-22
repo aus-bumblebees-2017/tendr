@@ -9,11 +9,16 @@ $(document).ready(function() {
   $("#swipe-card").on("swiperight",  function(e) {
     e.preventDefault();
     console.log("swipe right");
-
+    $('#swipe-card').animateCss('bounceOutRight');
+    var lastCard = nextCard(deck);
+    deck.updateHistory(lastCard, 1);
   });
   $("#swipe-card").on("swipeleft", function(e) {
     e.preventDefault();
     console.log("swipe left");
+    $('#swipe-card').animateCss('bounceOutLeft');
+    var lastCard = nextCard(deck)
+    deck.updateHistory(lastCard, 3)
   })
   // 1 - Save
   // 2 - Fav
