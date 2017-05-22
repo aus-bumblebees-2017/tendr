@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   get '/welcome/show_user', :to => 'welcome#show_user'
 
   post '/decks/new', :to => 'decks#create'
-  devise_for :users, controllers: {
-        registrations: 'users/registrations'
-      }
+  # devise_for :users, controllers: {
+        # registrations: 'users/registrations'
+      # }
 
 
   get '/users/show/:id' => 'users#show', as: 'profile'
