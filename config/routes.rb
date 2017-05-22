@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/decks/show', :to => 'decks#show'
   put '/decks/:id/update', :to => 'decks#update'
   get '/welcome/index', :to => 'welcome#index'
+  get '/places/:id', :to => 'places#show'
 
   get '/api' => 'api#index'
 

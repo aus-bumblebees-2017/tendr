@@ -55,6 +55,7 @@ function nextCard(deck) {
   $("#card-image").attr('src', newCard.url);
   $("#card-id").html(newCard.id);
   $("#card-name").html(newCard.name);
+  $("#place-link").attr('href', '/places/show/' + newCard.place_id + '?food_id=' + newCard.id)
   return newCard;
 };
 
@@ -71,6 +72,6 @@ function nextCard(deck) {
 
 function deckCallBack(resp) {
   for (var i in resp) {
-    deck.addCard(new Card(resp[i]["id"], resp[i]["name"], resp[i]["url"]))
+    deck.addCard(new Card(resp[i]["id"], resp[i]["name"], resp[i]["url"], resp[i]["place_id"]))
   }
 }
