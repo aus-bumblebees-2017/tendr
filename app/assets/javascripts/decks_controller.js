@@ -64,6 +64,7 @@ function nextCard(deck) {
   $("#card-id").html(newCard.id);
   $("#card-name").html(newCard.name);
   $("#place-link").attr('href', '/places/show/' + newCard.place_id + '?food_id=' + newCard.id)
+  $("#place-btn").attr('href', '/places/show/' + newCard.place_id + '?food_id=' + newCard.id)
   return newCard;
 };
 
