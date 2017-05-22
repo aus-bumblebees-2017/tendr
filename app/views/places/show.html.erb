@@ -1,10 +1,11 @@
 <div data-role="page" id="place-show">
+<center><h3>Hit picture to go back</h3></center>
   <div data-role="main" class="ui-content">
     <center>
-      <div id="swipe-card" class="card">
+      <div id="place-card" class="card">
         <center>
           <div style = "position: relative; text-align: center; padding-top: 5px">
-            <%= link_to(image_tag(@last_food.url, id: "card-image"), decks_show_path) %>
+            <%= link_to(image_tag(@last_food.url, id: "card-image", style: "max-width: 270px"), decks_show_path) %>
             <h1 id="card-name" style = "font-weight: normal; font-size: 20pt;">
               <%= @place.name %>
             </h1>
