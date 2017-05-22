@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.feature "User Registration", type: :feature do
-  scenario "As a user, I want to be able to register" do
+  xscenario "As a user, I want to be able to register" do
     visit "/welcome/index"
     expect(page).to have_link("Register")
     click_on("Register")
@@ -30,6 +30,13 @@ RSpec.feature "User Registration", type: :feature do
     expect(page).to have_content("Swipe Away!")
 
   end
+  args = {
+    user_name: "tester",
+    zipcode: "78703",
+    email: "tester@hello.com",
+    password: "password"
+  }
+  User.create(args)
   scenario "As a user, I can login" do
      visit "/welcome/index"
     expect(page).to have_link("Login")
@@ -56,7 +63,7 @@ RSpec.feature "User Registration", type: :feature do
     expect(page).to have_link("Edit Profile")
     click_link("Edit Profile")
 
-     save_and_open_page
+     # save_and_open_page
 
   end
   xscenario "As a user, I want to add a zip code" do
@@ -64,6 +71,7 @@ RSpec.feature "User Registration", type: :feature do
   xscenario "As a user, I want to recover lost password" do
   end
 end
+
 RSpec.feature "User Login", type: :feature do
   xscenario "As a user, I want to login." do
 
