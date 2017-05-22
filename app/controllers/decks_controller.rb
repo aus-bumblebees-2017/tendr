@@ -3,6 +3,7 @@ class DecksController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    binding.pry
     if current_user.last_viewed
       @card = Food.find_by(id: current_user.last_viewed)
       current_user.update_attribute(:last_viewed, nil)
