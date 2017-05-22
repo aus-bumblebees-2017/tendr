@@ -29,7 +29,34 @@ RSpec.feature "User Registration", type: :feature do
     # save_and_open_page
     # save_and_open_screenshot
   end
-  xscenario "As a user, I can set my dietary preferences/restrictions" do
+  scenario "As a user, I can login" do
+     visit "/welcome/index"
+    expect(page).to have_link("Login")
+    click_on("Login")
+    expect(page).to have_content("Email")
+    fill_in("Email", :with => "tester@hello.com")
+    expect(find_field("Email").value).to eq "tester@hello.com"
+    expect(page).to have_content("Password")
+    fill_in("Password", :with => "password")
+    expect(find_field("Password").value).to eq "password"
+    click_button 'Log in'
+    # save_and_open_page
+    expect(page).to have_content("Swipe")
+    expect(page.current_path).to eq ("/foods/index")
+  end
+  scenario "As a user, I can set my dietary preferences/restrictions" do
+     visit "/welcome/index"
+    click_on("Login")
+    fill_in("Email", :with => "tester@hello.com")
+    fill_in("Password", :with => "password")
+    click_button 'Log in'
+    expect(page).to have_link("Tester")
+    click_link("Tester")
+    expect(page).to have_link("Edit Profile")
+    click_link("Edit Profile")
+
+     save_and_open_page
+
   end
   xscenario "As a user, I want to add a zip code" do
   end

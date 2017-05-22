@@ -1,6 +1,6 @@
 GEM
   remote: https://rubygems.org/
-  remote: https://rails-assets.org/
+  remote: http://insecure.rails-assets.org/
   specs:
     actioncable (5.0.3)
       actionpack (= 5.0.3)
@@ -42,16 +42,14 @@ GEM
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
-    autoprefixer-rails (7.0.1)
+    autoprefixer-rails (7.1.1)
       execjs
-    bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
     builder (3.2.3)
-    byebug (9.0.6)
     capybara (2.14.0)
       addressable
       mime-types (>= 1.16)
@@ -68,10 +66,10 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    devise (4.2.1)
+    devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.1)
+      railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
@@ -114,12 +112,9 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.6.0)
     nio4r (2.0.0)
-    nokogiri (1.7.2)
-      mini_portile2 (~> 2.1.0)
     nokogiri (1.7.2-x86-mingw32)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
-    pg (0.20.0)
     pg (0.20.0-x86-mingw32)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -175,7 +170,7 @@ GEM
       rspec-mocks (~> 3.6.0)
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
-    sass (3.4.23)
+    sass (3.4.24)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
@@ -186,7 +181,7 @@ GEM
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.0)
+    simplecov-html (0.10.1)
     slop (3.6.0)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
@@ -221,7 +216,6 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
-  ruby
   x86-mingw32
 
 DEPENDENCIES
