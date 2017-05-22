@@ -1,5 +1,5 @@
 example_id                                         | status | run_time        |
 -------------------------------------------------- | ------ | --------------- |
-./spec/controllers/users_controller_spec.rb[1:1:1] | passed | 0.00739 seconds |
-./spec/controllers/users_controller_spec.rb[1:1:2] | failed | 0.21523 seconds |
-./spec/features/digital_wireframe_spec.rb[1:1]     | passed | 0.19332 seconds |
+./spec/controllers/users_controller_spec.rb[1:1:1] | passed | 0.00731 seconds |
+./spec/controllers/users_controller_spec.rb[1:1:2] | failed | 0.19699 seconds |
+./spec/features/digital_wireframe_spec.rb[1:1]     | passed | 0.25771 seconds |

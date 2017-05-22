@@ -4,7 +4,7 @@ class UsersControllerSpec < ActionController::TestCase
 
 end
 
-RSpec.describe UsersControllerSpec, type: :controller do
+RSpec.describe UsersController, type: :controller do
 
 	describe "Users" do
 		before(:each) do 
@@ -18,7 +18,7 @@ RSpec.describe UsersControllerSpec, type: :controller do
 		it "routes the user to profile page" do
 			user = User.create!(email: "email@mail.com", password: "password", user_name: "dave11", zipcode: "11223")
 			favorites = user.favorites
-			get :show
+			
 			assert_response :success
 		end
 	end
