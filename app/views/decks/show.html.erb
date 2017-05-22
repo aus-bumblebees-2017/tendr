@@ -1,14 +1,15 @@
 <div data-role="page" id="pageone">
-  <div data-role="main" class="ui-content">
+  <div data-role="main">
     <center>
+      <p>Hit picture checkout the restaurant<br>or swipe for new food</p>
       <div id="swipe-card" class="card">
         <center>
-          <div style = "position: relative; text-align: center; padding-top: 5px">
-            <%= link_to(image_tag(@card.url, id: "card-image"), show_place_path(@card.place, :food_id => @card.id), id: "place-link") %>
+          <div style ="position: relative; text-align: center; padding-top: 5px; width: 300px">
+            <%= link_to(image_tag(@card.url, id: "card-image", style: "max-width: 270px" ), show_place_path(@card.place, :food_id => @card.id), id: "place-link") %>
             <h1 id="card-name" style = "font-weight: normal; font-size: 20pt;">
               <%= @card.place.name %>
             </h1>
-            <i id="hate" style = "font-size: 60pt; padding-right: 20px; color: red" class="fa fa-times" aria-hidden="true"></i>
+            <i id="dislike" style = "font-size: 60pt; padding-right: 20px; color: red" class="fa fa-times" aria-hidden="true"></i>
             <i id="like" style = "margin-top: 65px; font-size: 50pt; padding-left: 20px; color: green" class="fa fa-heart" aria-hidden="true"></i>
           </div>
         </center>

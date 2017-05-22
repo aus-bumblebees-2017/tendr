@@ -23,6 +23,12 @@ Rails.application.routes.draw do
   get '/foods/index' => 'foods#index', as: 'foods'
   get '/histories/index' => 'histories#index', as: 'histories'
 
+  # devise_for :users
+
+  devise_scope :user do
+    get 'users/edit', :to => 'devise/registrations#edit'
+  end
+
   root  to: 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
