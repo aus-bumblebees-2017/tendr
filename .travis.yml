@@ -1,0 +1,22 @@
+language: ruby
+
+rvm:
+  - 2.2.5
+
+services :
+  - postgresql
+
+before_script:
+  - ls -l bin bin/rails
+  - cat bin/rails
+  - bin/rails db:create RAILS_ENV=test
+  - bin/rails db:migrate RAILS_ENV=test
+
+script: bin/rails spec
+
+test:
+  adapter: postgresql
+  database: tendr_test
+
+notifications:
+  slack: dbc-atx:hklJPM0iXVIMt3mAYzagaZaH
