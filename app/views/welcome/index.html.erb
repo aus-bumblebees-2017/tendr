@@ -1,13 +1,13 @@
-<h1>Welcome!</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-
-<p>Welcome to Tendr please login or register. Returning users will go to the <a href="./show_deck"><em>Show Deck</em></a> view once they log in to start swiping through the deck of food cards.</p>
-<p>New users will go through registration views to not only set up their "normal" user login stuff but this is also where we would prompt for data to be used when building the deck of food cards. </p>
-
-<a href="./index">Welcome |</a>
-<a href="./show_deck">Show Deck |</a>
-<a href="./show_details">Show Details |</a>
-<a href="./show_history">Show History |</a>
-<a href="./show_user">Show User</a>
-
-
+<center>
+<div class="card" style="width: 20rem">
+  <%= image_tag(@food.url, class: "card-img-top") %>
+  <div class="card-block">
+    <h4 class="card-title">Tender</h4>
+    <p class="card-text">Swipe right on your food!</p>
+    <center>
+      <%= link_to('login', new_user_session_path, class: 'btn btn-primary') %>
+      <%= link_to('register', new_user_registration_path, class: 'btn btn-primary') %>
+    </center>
+  </div>
+</div>
+</center>

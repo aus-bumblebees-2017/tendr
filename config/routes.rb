@@ -2,26 +2,31 @@ Rails.application.routes.draw do
 
   get '/decks/show', :to => 'decks#show'
   put '/decks/:id/update', :to => 'decks#update'
+  get '/welcome/index', :to => 'welcome#index'
   get '/places/:id', :to => 'places#show'
-  get 'welcome/index'
 
   get '/api' => 'api#index'
 
-  get 'welcome/show_deck'
-  get 'welcome/show_details'
-  get 'welcome/show_history'
-  get 'welcome/show_user'
+  get '/welcome/show_deck', :to => 'welcome#show_deck'
+  get '/welcome/show_details', :to => 'welcome#show_details'
+  get '/welcome/show_history', :to => 'welcome#show_history'
+  get '/welcome/show_user', :to => 'welcome#show_user'
 
   post '/decks/new', :to => 'decks#create'
-  devise_for :users
+
 
 
   get '/users/show/:id' => 'users#show', as: 'profile'
   get '/places/show/:id' => 'places#show', as: 'show_place'
-  get '/foods/index' => 'foods#index', as: 'foods'
   get '/histories/index' => 'histories#index', as: 'histories'
 
-  root to: 'welcome#index'
+  devise_for :users
+
+  devise_scope :user do
+    get 'users/edit', :to => 'devise/registrations#edit'
+  end
+
+  root  to: 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

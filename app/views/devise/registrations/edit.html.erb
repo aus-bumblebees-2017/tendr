@@ -3,12 +3,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :user_name %><br />
-    <%= f.text_field :user_name, autofocus: true %>
-  </div>
-
-    <br><strong> <%= f.label raw("Which diet suits you?") %> </strong> <br>
+  <br><strong> <%= f.label raw("Dietary preference change?") %> </strong> <br>
     <%= f.radio_button :diet, "Omnivore", :checked => true %>
     <%= f.label :diet, "Omnivore(Eats Everything)", :value => "Omnivore" %><br>
     <%= f.radio_button :diet, "Pescaterian" %>
@@ -17,22 +12,21 @@
     <%= f.label :diet, "Vegetarian", :value => "Vegetarian" %>
     </div>
 
-  <div class="field">
-    <%= f.label raw("Would you like to change your diet?") %>
-    <%= f.radio_button("resource_name", "diet", "Omnivore(Eats Everything)") %><br />
-    <%= f.radio_button("resource_name", "diet", "Pescaterian") %><br />
-    <%= f.radio_button("resource_name", "diet", "Vegetarian") %><br />
-  </div>
+    <div class="field">
+    <br><%= f.label :user_name %><br />
+    <%= f.text_field :user_name, autofocus: true %>
+    </div>
 
    <div class="field">
     <%= f.label :zipcode %><br />
-    <%= f.zipcode_field :zipcode, autofocus: true %>
+    <%= f.text_field :zipcode, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
