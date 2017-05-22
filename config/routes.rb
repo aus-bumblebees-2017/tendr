@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/foods/index' => 'foods#index', as: 'foods'
   get '/histories/index' => 'histories#index', as: 'histories'
 
-  # devise_for :users
+  devise_for :users
 
   devise_scope :user do
     get 'users/edit', :to => 'devise/registrations#edit'
