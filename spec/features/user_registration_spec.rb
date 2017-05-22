@@ -6,7 +6,6 @@ RSpec.feature "User Registration", type: :feature do
     click_on("Register")
     expect(page).to have_text("Sign up")
     assert page.has_checked_field?("Omnivore(Eats Everything)")
-
     page.choose("Vegetarian")
     assert page.has_checked_field?("Vegetarian")
     expect(page).to have_content("User name")
@@ -24,10 +23,12 @@ RSpec.feature "User Registration", type: :feature do
     expect(page).to have_content("Password confirmation")
     fill_in("Password confirmation", :with => "password")
     expect(find_field("Password confirmation").value).to eq "password"
+    # binding.pry
     click_button 'Sign up'
-    expect(page).to have_content("Swipe Away!")
     # save_and_open_page
     # save_and_open_screenshot
+    expect(page).to have_content("Swipe Away!")
+
   end
   scenario "As a user, I can login" do
      visit "/welcome/index"
