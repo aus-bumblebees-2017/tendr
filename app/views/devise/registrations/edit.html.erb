@@ -19,14 +19,14 @@
 
   <div class="field">
     <%= f.label raw("Would you like to change your diet?") %>
-    <%= f.radio_button("resource_name", "diet", "Omnivore(Eats Everything)") %><br />
-    <%= f.radio_button("resource_name", "diet", "Pescaterian") %><br />
-    <%= f.radio_button("resource_name", "diet", "Vegetarian") %><br />
+    <%= f.radio_button("diet", "Omnivore(Eats Everything)") %><br>
+    <%= f.radio_button("diet", "Pescaterian") %><br>
+    <%= f.radio_button("diet", "Vegetarian") %><br>
   </div>
 
    <div class="field">
     <%= f.label :zipcode %><br />
-    <%= f.zipcode_field :zipcode, autofocus: true %>
+    <%= f.number_field :zipcode, autofocus: true %>
   </div>
 
   <div class="field">

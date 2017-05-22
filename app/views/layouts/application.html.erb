@@ -22,7 +22,7 @@
             <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/users/logout">Logout</a>
+            <a class="nav-link" href="/users/sign_out" data-method="delete">Logout</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/users/show/<%= current_user.id %>"><%= current_user.user_name.humanize %></a>
