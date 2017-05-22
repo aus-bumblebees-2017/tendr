@@ -6,10 +6,13 @@ $(document).ready(function() {
   test = deck.fetchCards();
 
   // Swipe is not working right :(
-  $("#swipe-card").on("swiperight",  function() {
+  $("#swipe-card").on("swiperight",  function(e) {
+    e.preventDefault();
     console.log("swipe right");
+
   });
-  $("#swipe-card").on("swipeleft", function() {
+  $("#swipe-card").on("swipeleft", function(e) {
+    e.preventDefault();
     console.log("swipe left");
   })
   // 1 - Save
@@ -17,8 +20,8 @@ $(document).ready(function() {
   // 3 - Discard
 
   // Get buttons working first
-  $('#hate').on("click", function(e) {
-    console.log("hate!");
+  $('#dislike').on("click", function(e) {
+    console.log("dislike!");
     $('#swipe-card').animateCss('bounceOutLeft');
     var lastCard = nextCard(deck)
     deck.updateHistory(lastCard, 3)
