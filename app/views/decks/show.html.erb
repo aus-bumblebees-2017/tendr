@@ -4,7 +4,7 @@
       <div id="swipe-card" class="card">
         <center>
           <div style = "position: relative; text-align: center; padding-top: 5px">
-            <%= image_tag(@card.url, id: "card-image") %>
+            <%= link_to(image_tag(@card.url, id: "card-image"), show_place_path(@card.place, :food_id => @card.id), id: "place-link") %>
             <h1 id="card-name" style = "font-weight: normal; font-size: 20pt;">
               <%= @card.place.name %>
             </h1>
