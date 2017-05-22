@@ -8,10 +8,5 @@
     <%= link_to "Back", foods_path %>
   </nav>
 </header>
-
-  <h3>Here Are Your Favorites</h3>
-  <% @favorites.each do |fav| %>
-  <%= link_to fav, show_place_path(fav.id) %> <br>
-  <% end %>
-
+<%= render 'dropdown' %>
 </div>
