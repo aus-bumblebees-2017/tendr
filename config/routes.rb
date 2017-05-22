@@ -13,7 +13,10 @@ Rails.application.routes.draw do
 
   post '/decks/new', :to => 'decks#create'
   devise_for :users
-
+  
+  authenticated do
+    root to: "secret#index", as: :authenticated_root
+  end
 
   get '/users/show/:id' => 'users#show', as: 'profile'
   get '/places/show/:id' => 'places#show', as: 'show_place'

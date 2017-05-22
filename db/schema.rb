@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20170518221543) do
 
   create_table "foods", force: :cascade do |t|
     t.integer  "place_id"
-    t.text     "google_place_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.text     "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["place_id"], name: "index_foods_on_place_id", using: :btree
   end
 
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20170518221543) do
 
   create_table "places", force: :cascade do |t|
     t.text     "google_id"
+    t.string   "name"
+    t.float    "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170518221543) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "diet"
     t.integer  "zipcode"
     t.string   "user_name"
     t.text     "last_viewed"
