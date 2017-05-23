@@ -1,4 +1,5 @@
 <div data-role="page" id="pageone">
+  <%= render 'neighborhoods/neighborhood_filter' %>
   <center>
     <div id="swipe-card" class="card" style="width: 20rem">
       <center>
@@ -17,5 +18,4 @@
     </div>
   </center>
 </div>
-<%= form_tag(decks_new_path)do %>
-<% end %>
+
