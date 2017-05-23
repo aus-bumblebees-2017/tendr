@@ -6,10 +6,10 @@
 <% @histories.each do |h| %>
 <% if h.state == 1 %>
 <tr>
-<%= h.food.place.name %><br>
+<%= h.food.place.name %><hr>
 </tr>
 <tr>
-<%= h.food.place.neighborhood.name%><br>
+<%= h.food.place.neighborhoods.name%><br>
 </tr>
 <% end %>
 <% end %>

@@ -5,11 +5,11 @@
 </tr>
 <% @histories.each do |h| %>
 <% if h.state == 3 %>
-<tr>
-<%= h.food.place.name %><br>
+<tr class="bg-warning">
+<%= h.food.place.name %>
 </tr>
 <tr>
-<%= h.food.place.neighborhood.name%><br>
+<%= h.food.place.neighborhoods.name%><hr>
 </tr>
 <% end %>
 <% end %>
