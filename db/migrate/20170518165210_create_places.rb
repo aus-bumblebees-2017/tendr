@@ -4,7 +4,7 @@ class CreatePlaces < ActiveRecord::Migration[5.0]
       t.text :google_id
       t.string :name
       t.float :rating
-      
+
       t.timestamps
     end
   end

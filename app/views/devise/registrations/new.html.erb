@@ -1,0 +1,57 @@
+<div class="sand-image-background"></div>
+<div class="sign-up">
+  <h2>Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+<!--   <div class="diet">
+     <br><strong> <%= f.label raw("Which diet suits you?") %> </strong> <br>
+        <%= f.radio_button :diet, "Omnivore", :checked => true %>
+        <%= f.label :diet, "Omnivore(Eats Everything)", :value => "Omnivore" %><br>
+        <%= f.radio_button :diet, "Pescaterian" %>
+        <%= f.label :diet, "Pescaterian", :value => "Pescaterian" %><br>
+        <%= f.radio_button :diet, "Vegetarian" %>
+        <%= f.label :diet, "Vegetarian", :value => "Vegetarian" %>
+    </div> -->
+    <div class="login-info">
+      <div class="field">
+        <br><%= f.label :user_name %>
+        <%= f.text_field :user_name, autofocus: true %>
+      </div>
+      <br>
+      <div class="form-control field">
+        <%= f.label :zipcode %>
+        <%= f.text_field :zipcode, autofocus: true %>
+      </div>
+      <br>
+      <div class="form-control field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+      <br>
+      <div class="form-control field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "off"%>
+        <br>
+        <em style="font-size: 8pt; float: right;">
+          * <%=@minimum_password_length%> character minimum
+        </em>
+      </div>
+      <br>
+      <div class="form-control field">
+        <%= f.label :password %>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <br>
+        <em style="font-size: 8pt; float: right;">
+          (confirmation)
+        </em>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+  </div>
+</div>
