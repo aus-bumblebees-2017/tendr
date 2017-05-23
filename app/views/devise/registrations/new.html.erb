@@ -19,17 +19,17 @@
         <%= f.text_field :user_name, autofocus: true %>
       </div>
       <br>
-      <div class="field">
+      <div class="form-control field">
         <%= f.label :zipcode %>
         <%= f.text_field :zipcode, autofocus: true %>
       </div>
       <br>
-      <div class="field">
+      <div class="form-control field">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true %>
       </div>
       <br>
-      <div class="field">
+      <div class="form-control field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <% end %>
@@ -40,7 +40,7 @@
         </em>
       </div>
       <br>
-      <div class="field">
+      <div class="form-control field">
         <%= f.label :password %>
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
         <br>

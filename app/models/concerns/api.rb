@@ -33,22 +33,29 @@ module Api
 
   def get_photo_references(google_id)
     place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{google_id}&key=#{ENV['GOOGLE_PLACES_API_KEY']}")
-    place['result']['photos'].map do |photo|
-      photo['photo_reference']
+    if place['result'] && place['result']['photos']
+      place['result']['photos'].map do |photo|
+        photo['photo_reference']
+      end
+    else
+      []
     end 
   end
 
   def fetch_photo_urls(google_id)
     photo_references = get_photo_references(google_id)
     food_photo_urls = []
-    photo_references.each do |p_r|
-      photo_url = HTTParty.get("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{p_r}&key=#{ENV['GOOGLE_PLACES_API_KEY']}").request.last_uri.to_s
-      if pic_description = HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags'][0][0]
-        if pic_description != "Non_Food"
-          food_photo_urls << photo_url
+    if photo_references != []
+      photo_references.each do |p_r|
+        photo_url = HTTParty.get("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{p_r}&key=#{ENV['GOOGLE_PLACES_API_KEY']}").request.last_uri.to_s
+        if (HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags'][0]) && (HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags'][0][0])
+          pic_description = HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags'][0][0]
+          if pic_description != "Non_Food"
+            food_photo_urls << photo_url
+          end
         end
       end
+      food_photo_urls
     end
-    food_photo_urls
   end
 end
