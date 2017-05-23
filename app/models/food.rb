@@ -14,7 +14,7 @@ class Food < ApplicationRecord
 
   def self.assign_to_place(place, photo_urls)
     photo_urls.each do |url|
-      food = Food.create(url: url)
+      food = Food.find_or_create_by(url: url)
       place.foods << food
       place.save
     end

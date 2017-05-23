@@ -5,12 +5,14 @@ module Api
     client = GooglePlaces::Client.new(ENV["GOOGLE_PLACES_API_KEY"])
   end
 
-  #args options {logitude: float, latitude: float, city_or_zip: string }
-  def get_place_info(args)
-    if args[:city_or_zip]
-      restaurants = get_restaurants_by_city_or_zip(args[:city_or_zip])
-    elsif args[:latitude] && args[:longitude]
+  #args options {longitude: float, latitude: float, city_or_zip: string, neighborhood: string}
+  def get_places_info(args)
+    if args[:latitude] && args[:longitude]
       restaurants = get_restaurants_by_geolocation(args[:latitude], args[:longitude])
+    elsif args[:neighborhood] && args[:city_or_zip]
+      restaurants = get_restaurants_by_city_neighborhood(args[:neighborhood], args[:city_or_zip])
+    elsif args[:city_or_zip]
+      restaurants = get_restaurants_by_city_or_zip(args[:city_or_zip])
     end
     restaurants.map do |restaurant|
       {google_id: restaurant.place_id, name: restaurant.name, rating: restaurant.rating}
@@ -18,11 +20,15 @@ module Api
   end
 
   def get_restaurants_by_city_or_zip(city_or_zip)
-    client.spots_by_query("Resaurants near #{city_or_zip}")
+    client.spots_by_query("Restaurants near #{city_or_zip}")
   end
 
   def get_restaurants_by_geolocation(latitude, longitude)
     client.spots(latitude, longitude, :types => ['restaurant','food'])
+  end
+
+  def get_restaurants_by_city_neighborhood(neighborhood, city)
+    client.spots_by_query("Restaurants in #{neighborhood} neighborhood #{city}")
   end
 
   def get_photo_references(google_id)
@@ -45,7 +51,4 @@ module Api
     end
     food_photo_urls
   end
-
-
-
 end

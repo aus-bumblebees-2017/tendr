@@ -17,10 +17,8 @@ Rails.application.routes.draw do
         # registrations: 'users/registrations'
       # }
 
-
   get '/users/show/:id' => 'users#show', as: 'profile'
   get '/places/show/:id' => 'places#show', as: 'show_place'
-  get '/foods/index' => 'foods#index', as: 'foods'
   get '/histories/index' => 'histories#index', as: 'histories'
 
   devise_for :users
