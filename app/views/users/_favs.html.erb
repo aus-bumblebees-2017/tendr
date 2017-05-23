@@ -1,0 +1,17 @@
+<div class="favs">
+<table>
+<tr>
+<h1><%= current_user.user_name.humanize %>'s Liked Dishes</h1>
+</tr>
+<% @histories.each do |h| %>
+<% if h.state == 1 %>
+<tr>
+<%= h.food.place.name %><br>
+</tr>
+<tr>
+<%= h.food.place.neighborhood.name%><br>
+</tr>
+<% end %>
+<% end %>
+</table>
+</div>
