@@ -40,4 +40,18 @@ code {
   font-size: 80%;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
+.hidden {
+  visibility: hidden;
+}
+
+.history-area {
+  width: 30%;
+  z-index: 0;
+}
+.nav {
+  position: absolute;
+}
