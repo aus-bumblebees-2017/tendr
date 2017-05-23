@@ -1,0 +1,22 @@
+<div id="filterrific_results">
+
+  <div>
+    <%= page_entries_info histories %>
+  </div>
+
+
+  <table>
+    <tr>
+      <th>History</th>
+    </tr>
+    <% histories.each do |history| %>
+      <tr>
+       
+        <td><%= history.state%></td>
+      </tr>
+    <% end %>
+  </table>
+
+  </div>
+
+  <%= will_paginate histories %>
