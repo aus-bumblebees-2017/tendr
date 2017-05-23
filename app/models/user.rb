@@ -38,15 +38,30 @@ class User < ApplicationRecord
 
   def build_deck
     json = []
-    @deck = Food.all.sample(10)
-    @deck.each do |food|
-      json_food = {
-        id: food.id,
-        name: food.place.name,
-        url: food.url,
-        place_id: food.place.id
-      }
-      json << json_food
+    if self.neighborhoods.empty?
+      Food.all.each do |food|
+        json_food = {
+          id: food.id,
+          name: food.place.name,
+          url: food.url,
+          place_id: food.place.id
+        }
+        json << json_food
+      end
+    else
+      self.neighborhoods each do |neighborhood|
+        neighborhood.places each do |place|
+          place.foods each do |food|
+            json_food = {
+              id: food.id,
+              name: food.place.name,
+              url: food.url,
+              place_id: food.place.id
+            }
+            json << json_food
+          end
+        end
+      end
     end
     json
   end
