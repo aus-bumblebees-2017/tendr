@@ -1,0 +1,21 @@
+<div data-role="page" id="pageone">
+  <%= render 'neighborhoods/neighborhood_filter' %>
+  <center>
+    <div id="swipe-card" class="card" style="width: 20rem">
+      <center>
+      <%= link_to(image_tag(@card.url, id: "card-image", class: "card-img-top", style: "max-width: 20rem"), show_place_path(@card.place, :food_id => @card.id), id: "place-link") %>
+      </center>
+      <h4 class="card-title" id="card-name">
+        <%= @card.place.name %>
+      </h4>
+      <p class="card-text">
+      <center>
+        <%= link_to('Show me more', show_place_path(@card.place, :food_id => @card.id), class: 'btn btn-primary', id: 'place-btn') %><br>
+        <i id="dislike" style = "font-size: 60pt; padding-right: 20px; color: #B71427" class="fa fa-times" aria-hidden="true"></i>
+        <i id="like" style = "margin-top: 65px; font-size: 50pt; padding-left: 20px; color: #386636" class="fa fa-heart" aria-hidden="true"></i>
+      </center>
+      </p>
+    </div>
+  </center>
+</div>
+
