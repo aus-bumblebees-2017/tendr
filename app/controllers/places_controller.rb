@@ -7,6 +7,4 @@ class PlacesController < ApplicationController
     @place_metadata = @place.get_place_metadata
     current_user.update_attribute(:last_viewed, @last_food.id)
   end
-
-  def
 end

@@ -27,9 +27,11 @@ class User < ApplicationRecord
     if self.neighborhoods.empty?
       return Food.all.sample
     else
-      self.neighborhoods each do |neighborhood|
-        neighborhood.places each do |place|
-          card_sample << place
+      self.neighborhoods.each do |neighborhood|
+        neighborhood.places.each do |place|
+          place.foods.each do |food|
+            card_sample << food
+          end
         end
       end
     end
@@ -63,6 +65,6 @@ class User < ApplicationRecord
         end
       end
     end
-    json
+    json.shuffle
   end
 end
