@@ -1,6 +1,6 @@
 class Place < ApplicationRecord
   has_many :foods
-  has_many :neighborhood_places 
+  has_many :neighborhood_places
   has_many :neighborhoods, through: :neighborhood_places
   extend Api
 
