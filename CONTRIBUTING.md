@@ -43,7 +43,7 @@ rails rspec
 
 Seed Database
 ```
-RAILS_ENV=test db:seed
+rails RAILS_ENV=test db:seed
 ```
 
 ## this is where documentation on how travis works will go

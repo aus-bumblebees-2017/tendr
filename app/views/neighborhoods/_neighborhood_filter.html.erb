@@ -17,7 +17,11 @@
             <ul>
   <% neighborhoods.each do |neighborhood| %>
               <li>
+              <% if current_user.neighborhoods.include?(neighborhood) %>
+                <%= check_box_tag "neighborhood[]", neighborhood.id, {checked: true} %>
+              <% else %>
                 <%= check_box_tag "neighborhood[]", neighborhood.id %>
+              <% end %>
                 <%= label_tag neighborhood.id, neighborhood.name %>
               </li>
   <% end %>

@@ -51,9 +51,9 @@ class User < ApplicationRecord
         json << json_food
       end
     else
-      self.neighborhoods each do |neighborhood|
-        neighborhood.places each do |place|
-          place.foods each do |food|
+      self.neighborhoods.each do |neighborhood|
+        neighborhood.places.each do |place|
+          place.foods.each do |food|
             json_food = {
               id: food.id,
               name: food.place.name,
