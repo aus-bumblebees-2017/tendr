@@ -8,7 +8,7 @@
     </dt>
     <dd>
       <div class="multiSelect">
-        <ul>
+        <ul class="list-unstyled">
 <% areas.each do |area| %>
           <li>
             <%= check_box_tag area.area, area.area %>
@@ -24,9 +24,10 @@
             </ul>
           </li>
 <% end %>
+<li>    <%= button_tag "Choose Neighborhoods", class: 'btn btn-success' %></li>
         </ul>
+
       </div>
     </dd>
-    <%= button_tag "Choose Neighborhoods", class: 'btn btn-success' %>
   </dl>
 <% end %>
