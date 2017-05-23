@@ -14,4 +14,8 @@
 //= require tether
 //= require bootstrap
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.mobile.custom
+//= require jquery.mobile.custom.min
+//= require checkbox
+//= require checkboxV2
+
