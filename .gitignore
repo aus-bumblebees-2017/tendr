@@ -21,3 +21,6 @@
 
 #Ignore simplecov files
 coverage
+
+#Ignore examples text
+/spec/examples.txt

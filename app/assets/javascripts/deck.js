@@ -14,7 +14,7 @@ Deck.prototype.fetchCards = function() {
   var request = $.ajax({
     method: 'POST',
     url: '/decks/new',
-    data: $("input").serialize()
+    data: "authenticity_token=" + $("meta[name=csrf-token]").attr("content")
     })
   .done(function(resp) {
     deckCallBack(resp);

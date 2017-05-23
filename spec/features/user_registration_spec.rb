@@ -1,12 +1,11 @@
 require 'rails_helper'
 RSpec.feature "User Registration", type: :feature do
-  scenario "As a user, I want to be able to register" do
+  xscenario "As a user, I want to be able to register" do
     visit "/welcome/index"
     expect(page).to have_link("Register")
     click_on("Register")
     expect(page).to have_text("Sign up")
     assert page.has_checked_field?("Omnivore(Eats Everything)")
-
     page.choose("Vegetarian")
     assert page.has_checked_field?("Vegetarian")
     expect(page).to have_content("User name")
@@ -24,11 +23,20 @@ RSpec.feature "User Registration", type: :feature do
     expect(page).to have_content("Password confirmation")
     fill_in("Password confirmation", :with => "password")
     expect(find_field("Password confirmation").value).to eq "password"
+    # binding.pry
     click_button 'Sign up'
-    expect(page).to have_content("Swipe Away!")
     # save_and_open_page
     # save_and_open_screenshot
+    expect(page).to have_content("Swipe Away!")
+
   end
+  args = {
+    user_name: "tester",
+    zipcode: "78703",
+    email: "tester@hello.com",
+    password: "password"
+  }
+  User.create(args)
   scenario "As a user, I can login" do
      visit "/welcome/index"
     expect(page).to have_link("Login")
@@ -41,8 +49,8 @@ RSpec.feature "User Registration", type: :feature do
     expect(find_field("Password").value).to eq "password"
     click_button 'Log in'
     # save_and_open_page
-    expect(page).to have_content("Swipe")
-    expect(page.current_path).to eq ("/foods/index")
+    expect(page).to have_content("Welcome back to Tendr")
+    expect(page.current_path).to eq ("/decks/show")
   end
   scenario "As a user, I can set my dietary preferences/restrictions" do
      visit "/welcome/index"
@@ -55,7 +63,7 @@ RSpec.feature "User Registration", type: :feature do
     expect(page).to have_link("Edit Profile")
     click_link("Edit Profile")
 
-     save_and_open_page
+     # save_and_open_page
 
   end
   xscenario "As a user, I want to add a zip code" do
@@ -63,6 +71,7 @@ RSpec.feature "User Registration", type: :feature do
   xscenario "As a user, I want to recover lost password" do
   end
 end
+
 RSpec.feature "User Login", type: :feature do
   xscenario "As a user, I want to login." do
 

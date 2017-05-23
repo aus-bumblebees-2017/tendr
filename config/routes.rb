@@ -12,9 +12,13 @@ Rails.application.routes.draw do
   get '/welcome/show_history', :to => 'welcome#show_history'
   get '/welcome/show_user', :to => 'welcome#show_user'
 
+
+  put '/neighborhoods', :to => 'neighborhoods#update'
+
   post '/decks/new', :to => 'decks#create'
-
-
+  # devise_for :users, controllers: {
+        # registrations: 'users/registrations'
+      # }
 
   get '/users/show/:id' => 'users#show', as: 'profile'
   get '/places/show/:id' => 'places#show', as: 'show_place'
