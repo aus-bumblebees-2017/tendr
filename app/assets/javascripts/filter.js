@@ -2,10 +2,14 @@
 $(document).ready(function() {
 	$(".liked").on("click", function(e) {
 		e.preventDefault()
-		$(".favs").toggle()
+		$(".favs").slideToggle("slow", function() {
+
+		})
 	})
 	$(".disliked").on("click", function(e) {
 		e.preventDefault()
-		$(".dislike").toggle()
+		$(".dislike").slideToggle("slow", function() {
+			
+		})
 	})
 })
