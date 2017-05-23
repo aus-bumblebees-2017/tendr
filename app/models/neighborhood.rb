@@ -9,4 +9,12 @@ class Neighborhood < ApplicationRecord
       end
     end
   end
+
+  def self.get_areas
+    return Neighborhood.group(:area).select('area')
+  end
+
+  def self.get_neighborhood_by_area(area)
+    return Neighborhood.where("area = '#{area}'")
+  end
 end

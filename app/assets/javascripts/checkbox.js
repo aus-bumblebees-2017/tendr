@@ -29,4 +29,6 @@ $('.mutliSelect input[type="checkbox"]').on('click', function() {
 
   }
 });
+
+$(".dropdown dd ul").hide();
 })
