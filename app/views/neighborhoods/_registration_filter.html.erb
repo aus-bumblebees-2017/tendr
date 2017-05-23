@@ -1,0 +1,25 @@
+<% areas = Neighborhood.get_areas %>
+  <dl>
+    <dd>
+      <div class="multiSelect">
+        <ul class="list-unstyled">
+<% areas.each do |area| %>
+          <li>
+            <%= check_box_tag area.area, area.area %>
+            <%= label_tag area.area, area.area %>
+  <% neighborhoods = Neighborhood.get_neighborhood_by_area(area.area) %>
+            <ul>
+  <% neighborhoods.each do |neighborhood| %>
+              <li>
+                <%= check_box_tag "neighborhood[]", neighborhood.id %>
+                <%= label_tag neighborhood.id, neighborhood.name %>
+              </li>
+  <% end %>
+            </ul>
+          </li>
+<% end %>
+        </ul>
+
+      </div>
+    </dd>
+  </dl>
