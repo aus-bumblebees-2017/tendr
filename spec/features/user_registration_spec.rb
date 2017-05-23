@@ -49,8 +49,8 @@ RSpec.feature "User Registration", type: :feature do
     expect(find_field("Password").value).to eq "password"
     click_button 'Log in'
     # save_and_open_page
-    expect(page).to have_content("Swipe")
-    expect(page.current_path).to eq ("/foods/index")
+    expect(page).to have_content("Welcome back to Tendr")
+    expect(page.current_path).to eq ("/decks/show")
   end
   scenario "As a user, I can set my dietary preferences/restrictions" do
      visit "/welcome/index"
