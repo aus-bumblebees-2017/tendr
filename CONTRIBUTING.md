@@ -40,4 +40,10 @@ Run your tests using:
 ```
 rails rspec
 ```
+
+Seed Database
+```
+rails RAILS_ENV=test db:seed
+```
+
 ## this is where documentation on how travis works will go

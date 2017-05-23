@@ -1,6 +1,8 @@
-class Neighborhood < ApplicationRecord  
-  has_many :neighborhood_places                    
+class Neighborhood < ApplicationRecord
+  has_many :neighborhood_places
   has_many :places, through: :neighborhood_places
+  has_many :neighborhood_users
+  has_many :users, through: :neighborhood_users
 
   def self.populate(neighborhoods)
     neighborhoods.each do |area, hood_names|
