@@ -1,0 +1,17 @@
+<div class="dislike">
+<table>
+<tr>
+<h1><%= current_user.user_name.humanize %>'s Disliked Dishes</h1>
+</tr>
+<% @histories.each do |h| %>
+<% if h.state == 3 %>
+<tr class="bg-warning">
+<%= h.food.place.name %>
+</tr>
+<tr>
+<%= h.food.place.neighborhoods.name%><hr>
+</tr>
+<% end %>
+<% end %>
+</table>
+</div>
