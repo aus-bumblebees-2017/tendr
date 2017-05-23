@@ -1,5 +1,5 @@
 <div class="sand-image-background"></div>
-<div class="sign-up">
+<div class="sign-up-and-login-box">
   <h2>Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -13,43 +13,40 @@
         <%= f.radio_button :diet, "Vegetarian" %>
         <%= f.label :diet, "Vegetarian", :value => "Vegetarian" %>
     </div> -->
-    <div class="login-info">
-      <div class="field">
+    <div class="info">
+      <div class="s-field">
         <br><%= f.label :user_name %>
-        <%= f.text_field :user_name, autofocus: true %>
+        <div class="line-up"><%= f.text_field :user_name, autofocus: true %></div>
       </div>
       <br>
-      <div class="form-control field">
+      <div class="s-field">
         <%= f.label :zipcode %>
-        <%= f.text_field :zipcode, autofocus: true %>
+        <div class="line-up"><%= f.text_field :zipcode, autofocus: true %></div>
       </div>
       <br>
-      <div class="form-control field">
+      <div class="s-field">
         <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true %>
+        <div class="line-up"><%= f.email_field :email, autofocus: true %></div>
       </div>
       <br>
-      <div class="form-control field">
+      <div class="s-field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <% end %>
-        <%= f.password_field :password, autocomplete: "off"%>
+        <div class="line-up"><%= f.password_field :password, autocomplete: "off"%></div>
         <br>
         <em style="font-size: 8pt; float: right;">
           * <%=@minimum_password_length%> character minimum
         </em>
       </div>
       <br>
-      <div class="form-control field">
-        <%= f.label :password %>
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <div class="s-field">
+        <%= f.label :password_confirmation %>
+        <div class="line-up"><%= f.password_field :password_confirmation, autocomplete: "off" %></div>
         <br>
-        <em style="font-size: 8pt; float: right;">
-          (confirmation)
-        </em>
       </div>
       <br>
-      <div class="actions">
+      <div class="signup-login actions">
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
