@@ -1,12 +1,12 @@
 <div class="favs">
 <table>
 <tr>
-<h1><%= current_user.user_name.humanize %>'s Liked Dishes</h1>
+<h4><%= current_user.user_name.humanize %>'s Liked Dishes</h4>
 </tr>
 <% @histories.each do |h| %>
 <% if h.state == 1 %>
 <tr>
-<%= h.food.place.name %><hr>
+<%= h.food.place.name %>
 </tr>
 <tr>
 <%= h.food.place.neighborhoods.name%><br>

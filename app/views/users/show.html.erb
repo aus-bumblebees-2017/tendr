@@ -1,23 +1,18 @@
-<div class="user-profile">
-<h1 class='bg-faded'>Hey there, <%= current_user.user_name.humanize %></h1>
-<hr>
-<header>
+
   <nav>
-    <%= link_to "Last Viewed", histories_path %>
-    <%= link_to "Edit Profile", users_edit_path %>
+    <%= link_to "Last Viewed", histories_path %> |
+    <%= link_to "Edit Profile", users_edit_path %> |
     <%= link_to "Back", decks_show_path %>
   </nav>
-</header>
-<div>
-<%= render 'dropdown' %>
-</div>
+<h1 class="profile-heading">Hey there, <%= current_user.user_name.humanize %></h1>
 <center>
-<div class="history-area">
-<p class="history">
-	<%= render 'dislikes' %>
-	<%= render 'favs' %>
-</p>	
+	<%= render 'dropdown' %>
 
+<div class="history-area">
+	<%= render 'dislikes' %>
+</div>
+<div class="history-area">
+	<%= render 'favs' %>
 </div>
 </center>
 

@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require jquery.mobile.custom
 //= require jquery.mobile.custom.min
+//= require filter
 //= require checkbox
 //= require checkboxV2
 

@@ -1,7 +1,7 @@
 <div class="dislike">
 <table>
 <tr>
-<h1><%= current_user.user_name.humanize %>'s Disliked Dishes</h1>
+<h4><%= current_user.user_name.humanize %>'s Disliked Dishes</h4>
 </tr>
 <% @histories.each do |h| %>
 <% if h.state == 3 %>
@@ -9,7 +9,7 @@
 <%= h.food.place.name %>
 </tr>
 <tr>
-<%= h.food.place.neighborhoods.name%><hr>
+<%= h.food.place.neighborhoods.name%>
 </tr>
 <% end %>
 <% end %>
