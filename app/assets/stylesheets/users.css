@@ -22,6 +22,7 @@
   height: 90%;
   z-index: -1;
 }
+
 .info {
   width: 200px;
   /*border: 1px solid red;*/
@@ -49,4 +50,9 @@
 .login-info {
   width: 80%;
   margin-left: 10%;
+}
+.user-profile {
+  position: absolute;
+  margin-top: 10px;
+  /*margin: 50px;*/
 }

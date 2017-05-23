@@ -1,17 +1,16 @@
-<div>
-<h1 class='bg-faded'>Hey there, <%= current_user.user_name.humanize %></h1>
-<hr>
-<header>
-  <nav>
-    <%= link_to "Last Viewed", histories_path %>
-    <%= link_to "Edit Profile", users_edit_path %>
-    <%= link_to "Back", decks_show_path %>
-  </nav>
-</header>
+<div class="user-profile">
+  <h1 class='bg-faded'>Hey there, <%= current_user.user_name.humanize %></h1>
+  <hr>
+  <header>
+    <nav>
+      <%= link_to "Last Viewed", histories_path %>
+      <%= link_to "Edit Profile", users_edit_path %>
+      <%= link_to "Back", decks_show_path %>
+    </nav>
+  </header>
 
   <h3>Here Are Your Favorites</h3>
   <% @favorites.each do |fav| %>
   <%= link_to fav, show_place_path(fav.id) %> <br>
   <% end %>
-
 </div>

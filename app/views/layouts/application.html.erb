@@ -50,7 +50,11 @@
     </nav>
 
     <!-- Begin page content -->
+  <% if params['controller'] == 'devise/registrations' || params['controller'] == 'devise/sessions' || params['controller'] == 'welcome' %>
     <div class="page-wrap">
+  <% else %>
+    <div class="container">
+  <% end %>
       <div class="devise-flash-container">
 	     <p class="notice"><%= notice %></p>
 	     <p class="alert"><%= alert %></p>
