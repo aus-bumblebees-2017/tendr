@@ -10,15 +10,20 @@ $(document).ready(function() {
     e.preventDefault();
     console.log("swipe right");
     $('#swipe-card').animateCss('bounceOutRight');
-    var lastCard = nextCard(deck);
-    deck.updateHistory(lastCard, 1);
+    $('#swipe-card').animateCss('bounceOutLeft');
+    setTimeout(function() {
+      var lastCard = nextCard(deck)
+      deck.updateHistory(lastCard, 1)
+    }, 700);
   });
   $("#swipe-card").on("swipeleft", function(e) {
     e.preventDefault();
     console.log("swipe left");
     $('#swipe-card').animateCss('bounceOutLeft');
-    var lastCard = nextCard(deck)
-    deck.updateHistory(lastCard, 3)
+    setTimeout(function() {
+      var lastCard = nextCard(deck)
+      deck.updateHistory(lastCard, 3)
+    }, 700);
   })
   // 1 - Save
   // 2 - Fav
@@ -28,14 +33,18 @@ $(document).ready(function() {
   $('#dislike').on("click", function(e) {
     console.log("dislike!");
     $('#swipe-card').animateCss('bounceOutLeft');
-    var lastCard = nextCard(deck)
-    deck.updateHistory(lastCard, 3)
+    setTimeout(function() {
+      var lastCard = nextCard(deck)
+      deck.updateHistory(lastCard, 1)
+    }, 700);
   });
   $('#like').on('click', function(e) {
     console.log('liked');
     $('#swipe-card').animateCss('bounceOutRight');
-    var lastCard = nextCard(deck);
-    deck.updateHistory(lastCard, 1);
+    setTimeout(function() {
+      var lastCard = nextCard(deck)
+      deck.updateHistory(lastCard, 3)
+    }, 700);
   });
 
 
@@ -59,6 +68,7 @@ function nextCard(deck) {
       deck.addCard(cards[i]);
     };
   };
+
   var newCard = deck.nextCard();
   $("#card-image").attr('src', newCard.url);
   $("#card-id").html(newCard.id);
