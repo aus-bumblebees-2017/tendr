@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   post '/decks/new', :to => 'decks#create'
 
-
+  put '/neighborhoods', :to => 'neighborhoods#update'
 
   get '/users/show/:id' => 'users#show', as: 'profile'
   get '/places/show/:id' => 'places#show', as: 'show_place'
