@@ -10,7 +10,6 @@ $(document).ready(function() {
     e.preventDefault();
     console.log("swipe right");
     $('#swipe-card').animateCss('bounceOutRight');
-    $('#swipe-card').animateCss('bounceOutLeft');
     setTimeout(function() {
       var lastCard = nextCard(deck)
       deck.updateHistory(lastCard, 1)
