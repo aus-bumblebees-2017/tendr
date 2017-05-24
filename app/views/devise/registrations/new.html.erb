@@ -20,6 +20,11 @@
       </div>
       <br>
       <div class="s-field">
+      <%= label_tag 'Neighborhoods:' %>
+      <%= render 'neighborhoods/registration_filter' %>
+      </div>
+      <br>
+      <div class="s-field">
         <%= f.label :zipcode %>
         <div class="line-up"><%= f.text_field :zipcode, autofocus: true %></div>
       </div>
