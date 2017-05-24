@@ -75,3 +75,6 @@
   margin-bottom: 20px;
   margin-right: 10px;
 }
+.max-height-img {
+  max-height: 480px;
+}
