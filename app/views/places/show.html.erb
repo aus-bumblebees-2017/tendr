@@ -3,29 +3,27 @@
   <center>
     <div id="swipe-card" class="card" style="max-width: 600px">
       <center>
-        <%= link_to(image_tag(@last_food.url, id: "card-image", style: "card-img-top rounded img-fluid max-height-img"), decks_show_path) %>
+        <%= link_to(image_tag(@last_food.url, id: "card-image", class: "card-img-top rounded img-fluid max-img-height"), decks_show_path) %>
             <h4 class="card-title" id="card-name">
               <%= @place.name %>
             </h4>
       </center>
-            <p class="card-text">
-            <p>Google Raiting: <%= @place.rating %><p>
-            <p>Neighborhoods:
-            <% @place.neighborhoods.each do |neighborhood| %>
-              <%= neighborhood.name %>
-              <% end %>
-            </p>
-            <p>Address: <%= link_to @place_metadata[:address], @place_metadata[:map] %></p>
-            <p>Phone: <%= @place_metadata[:phone] %></p>
-            <p><%= link_to @place_metadata[:place_url], @place_metadata[:place_url], target: :_blank %></p>
-          <cetner>
+        <p>Google Rating: <%= @place.rating %></p>
+        <p>Neighborhoods:
+        <% @place.neighborhoods.each do |neighborhood| %>
+          <%= neighborhood.name %>
+        <% end %>
+        </p>
+        <p>Address: <%= link_to @place_metadata[:address], @place_metadata[:map], target: :_blank %></p>
+        <p>Phone: <%= @place_metadata[:phone] %></p>
+        <p><%= link_to 'Restaurant Website', @place_metadata[:place_url], target: :_blank %></p>
+        <center>
           <%= link_to('go back', decks_show_path, class: 'btn btn-primary') %>
-          </div>
         </center>
       </div>
     </center>
   </div>
-</div>
+
 <%= javascript_include_tag "card" %>
 <%= javascript_include_tag "deck" %>
 <%= javascript_include_tag "decks" %>
