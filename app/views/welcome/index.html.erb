@@ -1,13 +1,13 @@
+<div class="image-background"><div class="overlay"></div></div>
 <center>
-<div class="card" style="width: 20rem">
-  <%= image_tag(@food.url, class: "card-img-top") %>
-  <div class="card-block">
-    <h4 class="card-title">Tender</h4>
-    <p class="card-text">Swipe right on your food!</p>
-    <center>
-      <%= link_to('login', new_user_session_path, class: 'btn btn-primary') %>
-      <%= link_to('register', new_user_registration_path, class: 'btn btn-primary') %>
-    </center>
+  <div class="transparent-box card no-margin-top" style="width: 20rem">
+    <div class="card-block">
+      <h4 class="card-title">Tender</h4>
+      <p class="card-text">Swipe right on your food!</p>
+      <center>
+        <%= link_to('login', new_user_session_path, class: 'btn btn-primary') %>
+        <%= link_to('register', new_user_registration_path, class: 'btn btn-primary') %>
+      </center>
+    </div>
   </div>
-</div>
 </center>

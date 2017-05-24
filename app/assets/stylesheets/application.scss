@@ -12,6 +12,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -40,4 +41,18 @@ code {
   font-size: 80%;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.history-area {
+  width: 30%;
+}
+.nav {
+  position: absolute;
+}
 

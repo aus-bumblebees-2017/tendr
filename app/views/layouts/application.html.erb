@@ -6,11 +6,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Robot|Muli|Shadows Into Light|Raleway" rel="stylesheet">
   </head>
   <body>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <nav class="navbar bg-faded navbar-toggleable-md navbar-light fixed-top">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -47,7 +50,11 @@
     </nav>
 
     <!-- Begin page content -->
+  <% if params['controller'] == 'devise/registrations' || params['controller'] == 'devise/sessions' || params['controller'] == 'welcome' %>
+    <div class="page-wrap">
+  <% else %>
     <div class="container">
+  <% end %>
       <div class="devise-flash-container">
 	     <p class="notice"><%= notice %></p>
 	     <p class="alert"><%= alert %></p>
