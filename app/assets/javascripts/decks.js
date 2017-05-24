@@ -34,7 +34,7 @@ $(document).ready(function() {
     $('#swipe-card').animateCss('bounceOutLeft');
     setTimeout(function() {
       var lastCard = nextCard(deck)
-      deck.updateHistory(lastCard, 1)
+      deck.updateHistory(lastCard, 3)
     }, 700);
   });
   $('#like').on('click', function(e) {
@@ -42,7 +42,7 @@ $(document).ready(function() {
     $('#swipe-card').animateCss('bounceOutRight');
     setTimeout(function() {
       var lastCard = nextCard(deck)
-      deck.updateHistory(lastCard, 3)
+      deck.updateHistory(lastCard, 1)
     }, 700);
   });
 
