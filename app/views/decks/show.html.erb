@@ -1,7 +1,6 @@
 <div class="image-background"><div class="overlay"></div></div>
     <div data-role="page" id="pageone">
   <center>
-    <div class="card-deck" style="max-width: 900px">
       <div id="swipe-card" class="card" style="max-width: 600px">
         <%= render 'neighborhoods/neighborhood_filter' %>
         <center>
@@ -18,12 +17,9 @@
         </center>
         </p>
       </div>
-      <div class="card hidden-md-down" id="map_card">
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=400x400&zoom=16&center=Austin", class: 'card-img img-fluid img-rounded ' %>
-      </div>
     </div>
   </center>
-</div>
+
 <%= javascript_include_tag "card" %>
 <%= javascript_include_tag "deck" %>
 <%= javascript_include_tag params[:controller] %>
