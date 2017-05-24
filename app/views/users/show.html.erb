@@ -2,29 +2,31 @@
 
 <h1 class="profile-heading">Hey there, <%= current_user.user_name.humanize %></h1>
 
-  <ul class="nav nav-tabs profile-nav" role="tablist">
-  <li role="presentation" class="likes">
-    <a href="#likes" aria-controls="likes" role="tab" data-toggle="tab">Likes
-    </a>
-
-    <li role="presentation" class="dislikes">
-    <a href="#dislikes" aria-controls="dislikes" role="tab" data-toggle="tab">Dislikes
+  <ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" href="#likes" role="tab" data-toggle="tab">Likes
     </a>
     </li>
-    <li role="presentation" class="settings">
-    <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings
+
+    <li class="nav-item">
+    <a class="nav-link" href="#dislikes" role="tab" data-toggle="tab">Dislikes
+    </a>
+    </li>
+
+    <li class="nav-item">
+    <a class="nav-link" href="#settings" role="tab" data-toggle="tab">Settings
     </a>
     </li>
   </ul>
 
   <div class="tab-content">
-<div role="tabpanel" class="tab-pane" id="likes">
+<div role="tabpanel" class="tab-pane fade in active" id="likes">
     	<%= render 'favs' %>
     </div>
-    <div role="tabpanel" class="tab-pane" id="dislikes">
+    <div role="tabpanel" class="tab-pane fade" id="dislikes">
     	<%= render 'dislikes' %>
     </div>
-    <div role="tabpanel" class="tab-pane" id="settings">
+    <div role="tabpanel" class="tab-pane fade" id="settings">
     	    <%= link_to "Last Viewed", histories_path %> |
 			    <%= link_to "Edit Profile", users_edit_path %> |
 			    <%= link_to "Back", decks_show_path %>

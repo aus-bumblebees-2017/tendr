@@ -7,7 +7,9 @@
 <% place_metadata = h.food.place.get_place_metadata %>
 <% if h.state == 3 %>
 <tr class="bg-warning">
-<%= link_to place.metadata[:place_url], place_metadata[:place_url], target: :_blank %>
+<% if place_metadata %>
+<%= link_to place_metadata[:place_url], place_metadata[:place_url], target: :_blank %>
+<% end %>
 </tr>
 <tr>
 <%= h.food.place.neighborhoods.name%>
