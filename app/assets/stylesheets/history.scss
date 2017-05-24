@@ -1,0 +1,14 @@
+.footer {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .footer {
+    display: block;
+    padding: 20px 0;
+    margin-bottom: 0;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+  }
+}
