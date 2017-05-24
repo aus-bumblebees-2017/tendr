@@ -4,7 +4,7 @@
       <div id="swipe-card" class="card" style="max-width: 600px">
         <%= render 'neighborhoods/neighborhood_filter' %>
         <center>
-        <%= link_to(image_tag(@card.url, id: "card-image", class: "card-img-top rounded img-fluid"), show_place_path(@card.place, :food_id => @card.id), id: "place-link") %>
+        <%= link_to(image_tag(@card.url, id: "card-image", class: "card-img-top rounded img-fluid max-img-height"), show_place_path(@card.place, :food_id => @card.id), id: "place-link") %>
         </center>
         <h4 class="card-title" id="card-name">
           <%= @card.place.name %>
