@@ -15,7 +15,7 @@ class Place < ApplicationRecord
 
   def get_place_metadata
     place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{self.google_id}&key=#{ENV['GOOGLE_PLACES_API_KEY']}")
-    if !place["html_attributions"].empty?
+    if !place["result"].empty?
       place_metadata = {
         :address => place["result"]["formatted_address"],
         :phone => place["result"]["formatted_phone_number"],
