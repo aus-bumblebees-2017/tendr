@@ -48,7 +48,7 @@ module Api
     if photo_references != []
       photo_references.each do |p_r|
         photo_url = HTTParty.get("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{p_r}&key=#{ENV['GOOGLE_PLACES_API_KEY']}").request.last_uri.to_s
-        if (HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags'][0]) && (HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags'][0][0])
+        if (HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags']) && (HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags'][0]) && (HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags'][0][0])
           pic_description = HTTParty.get("http://api.foodai.org/v1/classify?image_url=#{photo_url}&num_tag=1")['tags'][0][0]
           if pic_description != "Non_Food"
             food_photo_urls << photo_url

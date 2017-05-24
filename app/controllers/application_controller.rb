@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(current_user)
+    current_user.neighborhoods.destroy_all
+    Neighborhood.all.each do |neighborhood|
+      current_user.neighborhoods << neighborhood
+      current_user.save
+    end
     decks_show_path
   end
 
