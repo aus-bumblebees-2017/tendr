@@ -10,6 +10,13 @@
     <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Robot|Muli|Shadows Into Light|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     <!-- Fixed navbar -->
@@ -53,7 +60,7 @@
   <% if params['controller'] == 'devise/registrations' || params['controller'] == 'devise/sessions' || params['controller'] == 'welcome' %>
     <div class="page-wrap">
   <% else %>
-    <div class="container">
+    <div class="container-fluid">
   <% end %>
       <div class="devise-flash-container">
 	     <p class="notice"><%= notice %></p>
