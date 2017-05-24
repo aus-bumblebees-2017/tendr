@@ -4,15 +4,12 @@
 <h4><%= current_user.user_name.humanize %>'s Liked Dishes</h4>
 </tr>
 <% @histories.each do |h| %>
-<% place_metadata = h.food.place.get_place_metadata %>
 <% if h.state == 1 %>
 <tr>
-	<% if place_metadata%>
-<%= link_to place_metadata[:place_url], place_metadata[:place_url], target: :_blank %>
-<% end %>
+<%= link_to h.food.place.name, show_place_path(h.food.place, :food_id => h.food.id), target: :_blank %>
 </tr>
 <tr>
-<%= h.food.place.name %> - <%= h.food.place.neighborhoods[0].name%><br>
+<%= h.food.place.neighborhoods[0].name%><br>
 </tr>
 <% end %>
 <% end %>
