@@ -2,13 +2,69 @@
 <html>
   <head>
     <title>Tendr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Robot|Muli|Shadows Into Light|Raleway" rel="stylesheet">
   </head>
-
   <body>
-    <%= yield %>
+    <!-- Fixed navbar -->
+    <nav class="navbar bg-faded navbar-toggleable-md navbar-light fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/decks/show">Tendr</a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+        <% if current_user %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+           <%= link_to "Log Out", destroy_user_session_path, :class => "nav-link" , :method => :delete %>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/show/<%= current_user.id %>"><%= current_user.user_name.humanize %></a>
+          </li>
+          <% else %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/sign_in">Login</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/sign_up">Register</a>
+          </li>
+          <% end %>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+  <% if params['controller'] == 'devise/registrations' || params['controller'] == 'devise/sessions' || params['controller'] == 'welcome' %>
+    <div class="page-wrap">
+  <% else %>
+    <div class="container-fluid">
+  <% end %>
+      <div class="devise-flash-container">
+	     <p class="notice"><%= notice %></p>
+	     <p class="alert"><%= alert %></p>
+      </div>
+      <%= yield %>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
   </body>
 </html>
