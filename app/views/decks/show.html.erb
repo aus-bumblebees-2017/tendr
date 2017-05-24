@@ -1,22 +1,22 @@
-<div class="image-background"><div class="overlay"></div></div>
-    <div data-role="page" id="pageone">
+<div class="table-image-background"><div class="overlay-thick"></div></div>
+<div data-role="page" id="pageone" class="place-show">
   <center>
       <div id="swipe-card" class="card" style="max-width: 600px">
         <%= render 'neighborhoods/neighborhood_filter' %>
         <center>
-        <%= link_to(image_tag(@card.url, id: "card-image", class: "card-img-top rounded img-fluid"), show_place_path(@card.place, :food_id => @card.id), id: "place-link") %>
+        <%= link_to(image_tag(@card.url, id: "card-image", class: "card-img-top rounded img-fluid max-img-height"), show_place_path(@card.place, :food_id => @card.id), id: "place-link") %>
         </center>
         <h4 class="card-title" id="card-name">
           <%= @card.place.name %>
         </h4>
         <p class="card-text">
         <center>
-          <%= link_to('Show me more', show_place_path(@card.place, :food_id => @card.id), class: 'btn btn-primary', id: 'place-btn') %><br>
+          <%= link_to('Show me more', show_place_path(@card.place, :food_id => @card.id), class: 'btn btn-primary mbtn', id: 'place-btn') %><br>
           <i id="dislike" style = "font-size: 60pt; padding-right: 20px; color: #B71427" class="fa fa-times" aria-hidden="true"></i>
           <i id="like" style = "margin-top: 65px; font-size: 50pt; padding-left: 20px; color: #386636" class="fa fa-heart" aria-hidden="true"></i>
         </center>
-        </p>
-      </div>
+      </p>
+    </div>
   </center>
     </div>
 <%= javascript_include_tag "card" %>

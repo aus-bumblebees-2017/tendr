@@ -1,9 +1,9 @@
-<div class="image-background"><div class="overlay"></div></div>
-<div data-role="page" id="place-show">
+<div class="table-image-background"><div class="overlay-thick"></div></div>
+<div data-role="page" id="pageone" class="place-show">
   <center>
     <div id="swipe-card" class="card" style="max-width: 600px">
       <center>
-        <%= link_to(image_tag(@last_food.url, id: "card-image", style: "card-img-top rounded img-fluid"), decks_show_path) %>
+        <%= link_to(image_tag(@last_food.url, id: "card-image", style: "card-img-top rounded img-fluid max-height-img"), decks_show_path) %>
             <h4 class="card-title" id="card-name">
               <%= @place.name %>
             </h4>
