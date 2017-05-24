@@ -3,7 +3,7 @@
 <h1 class="profile-heading">Hey there, <%= current_user.user_name.humanize %></h1>
   <ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" href="#likes" role="tab" data-toggle="tab">Likes
+    <a class="nav-link" href="#likes" role="tab" data-toggle="tab">Likes
     </a>
     </li>
 
@@ -26,9 +26,8 @@
     	<%= render 'dislikes' %>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="settings">
-    	    <%= link_to "Last Viewed", histories_path %> |
 			    <%= link_to "Edit Profile", users_edit_path %> |
-			    <%= link_to "Back", decks_show_path %>
+			    <%= link_to "Back to swiping", decks_show_path %>
     </div>
   </div>
 </div>
