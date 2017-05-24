@@ -41,10 +41,24 @@
 * GPS info
 * ZIP codes
 
-
-
 # Install
+Deploy to Heroku
+
+Push Master to Heroku Staging
+```
+git push staging master
+heroku run rake db:migrate --remote staging
+```
 
 
+Push Master to Heroku Production
+```
+git push production master
+heroku run rake db:migrate --remote production
+```
 
+To Drop Database - Something like:
+```
+heroku pg:reset --remote staging
+```
 # How to Use
