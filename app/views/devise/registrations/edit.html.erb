@@ -1,63 +1,73 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="sand-image-background"></div>
+<div class="sign-up-and-login-box">
+  <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <br><strong> <%= f.label raw("Dietary preference change?") %> </strong> <br>
-    <%= f.radio_button :diet, "Omnivore", :checked => true %>
-    <%= f.label :diet, "Omnivore(Eats Everything)", :value => "Omnivore" %><br>
-    <%= f.radio_button :diet, "Pescaterian" %>
-    <%= f.label :diet, "Pescaterian", :value => "Pescaterian" %><br>
-    <%= f.radio_button :diet, "Vegetarian" %>
-    <%= f.label :diet, "Vegetarian", :value => "Vegetarian" %>
+<!--     <br><strong> <%= f.label raw("Dietary preference change?") %> </strong> <br>
+      <%= f.radio_button :diet, "Omnivore", :checked => true %>
+      <%= f.label :diet, "Omnivore(Eats Everything)", :value => "Omnivore" %><br>
+      <%= f.radio_button :diet, "Pescaterian" %>
+      <%= f.label :diet, "Pescaterian", :value => "Pescaterian" %><br>
+      <%= f.radio_button :diet, "Vegetarian" %>
+      <%= f.label :diet, "Vegetarian", :value => "Vegetarian" %> -->
+
+      <div class="s-field o">
+      <br><%= f.label :user_name %><br />
+      <%= f.text_field :user_name, autofocus: true %>
+      </div>
+      <br>
+<!--      <div class="field">
+      <%= f.label :zipcode %><br />
+      <%= f.text_field :zipcode, autofocus: true %>
+    </div> -->
+
+    <div class="s-field o">
+      <%= f.label :email %><br/>
+      <%= f.email_field :email, autofocus: true %>
     </div>
 
-    <div class="field">
-    <br><%= f.label :user_name %><br />
-    <%= f.text_field :user_name, autofocus: true %>
-    </div>
-
-   <div class="field">
-    <%= f.label :zipcode %><br />
-    <%= f.text_field :zipcode, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+    <br>
+    <div class="s-field o">
+      <%= f.label :password %><em style="font-size: 8pt;"> <i>(leave blank if you don't want to change)</i></em><br/>
+      <%= f.password_field :password, autocomplete: "off" %>
+      <% if @minimum_password_length %>
+        <div style="line-height: .5; margin-left: 150px;">
+          <em style="font-size: 8pt;">
+            * <%=@minimum_password_length%> character minimum
+          </em>
+        </div>
+      <% end %>
+    </div>
+    <br>
+    <div class="s-field o">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+    <br>
+    <div class="s-field o">
+      <%= f.label :current_password %>
+      <em style="font-size: 8pt;">
+        <i>(needed to confirm changes)</i>
+      </em>
+      <br/>
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
+    <div class="signup-login actions">
+      <%= f.submit "Update", class: 'btn btn-primary sbtn'  %>
+    </div>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <center>
+    <em style="font-size: 10pt;">
+      Unhappy with our product? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel btn btn-primary' %>
+    </em>
+  </center>
+  <%= link_to "Back", :back %>
+</div>
