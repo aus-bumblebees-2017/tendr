@@ -1,7 +1,7 @@
 <div class="sand-image-background"></div>
 <div class="sign-up-and-login-box">
   <h2>Sign up</h2>
-
+  <br>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 <!--   <div class="diet">
@@ -47,7 +47,7 @@
       </div>
       <br>
       <div class="signup-login actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Sign up", class: 'btn btn-primary sbtn' %>
       </div>
     <% end %>
   </div>
