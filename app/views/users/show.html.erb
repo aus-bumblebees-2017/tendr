@@ -1,18 +1,34 @@
+ <div class="history">
 
-  <nav>
-    <%= link_to "Last Viewed", histories_path %> |
-    <%= link_to "Edit Profile", users_edit_path %> |
-    <%= link_to "Back", decks_show_path %>
-  </nav>
 <h1 class="profile-heading">Hey there, <%= current_user.user_name.humanize %></h1>
-<center>
-	<%= render 'dropdown' %>
 
-<div class="history-area">
-	<%= render 'dislikes' %>
-</div>
-<div class="history-area">
-	<%= render 'favs' %>
-</div>
-</center>
+  <ul class="nav nav-tabs profile-nav" role="tablist">
+  <li role="presentation" class="likes">
+    <a href="#likes" aria-controls="likes" role="tab" data-toggle="tab">Likes
+    </a>
 
+    <li role="presentation" class="dislikes">
+    <a href="#dislikes" aria-controls="dislikes" role="tab" data-toggle="tab">Dislikes
+    </a>
+    </li>
+    <li role="presentation" class="settings">
+    <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings
+    </a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+<div role="tabpanel" class="tab-pane" id="likes">
+    	<%= render 'favs' %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="dislikes">
+    	<%= render 'dislikes' %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="settings">
+    	    <%= link_to "Last Viewed", histories_path %> |
+			    <%= link_to "Edit Profile", users_edit_path %> |
+			    <%= link_to "Back", decks_show_path %>
+    </div>
+  </div>
+
+</div>
