@@ -5,8 +5,12 @@
       <h4 class="card-title">Tender</h4>
       <p class="card-text">Swipe right on your food!</p>
       <center>
+      <% if current_user %>
+        <%= link_to('start swiping', decks_show_path, class: 'btn btn-primary') %>
+      <% else %>
         <%= link_to('login', new_user_session_path, class: 'btn btn-primary') %>
         <%= link_to('register', new_user_registration_path, class: 'btn btn-primary') %>
+      <% end %>
       </center>
     </div>
   </div>
