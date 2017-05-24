@@ -21,7 +21,7 @@
   z-index: 2;
 }
 
-.card {
+.transparent-box {
   background-color: rgba(242, 242, 242, 0.8);
   margin-top: 20%;
   border: none;
