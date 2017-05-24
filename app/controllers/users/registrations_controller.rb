@@ -10,7 +10,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    # binding.pry
     super
   end
 
