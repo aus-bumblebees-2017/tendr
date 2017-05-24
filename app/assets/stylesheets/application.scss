@@ -16,6 +16,7 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
+  margin-top: -50px;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
@@ -41,18 +42,11 @@ code {
   font-size: 80%;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
+.history {
+  margin-top: 10%;
 }
 
-.hidden {
-  visibility: hidden;
-}
-
-.history-area {
-  width: 30%;
-}
-.nav {
-  position: absolute;
+.tab-pane {
+  margin-top: 2%;
 }
 
