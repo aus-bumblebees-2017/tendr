@@ -62,6 +62,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'font-awesome-rails'
 
+gem 'rails_serve_static_assets'
+gem 'rails_stdout_logging'
+
 # Tether - fix the bootstrap error
 source 'http://insecure.rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

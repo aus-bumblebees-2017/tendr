@@ -11,7 +11,6 @@ class User < ApplicationRecord
 
   validates :user_name, presence: true,
                         case_sensitive: false
-  validates :zipcode, presence: true, length: { :is => 5 }
 
 
   def favorites

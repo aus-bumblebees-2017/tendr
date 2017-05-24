@@ -41,41 +41,9 @@ body > .container {
 code {
   font-size: 80%;
 }
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-#history-nav {
+/*
+.history {
+  overflow: hidden;
   position: absolute;
-  right: 15%;
-}
-
-.history-area {
-  margin-top: 5%;
-  display: inline-block;
-  width: 30%;
-  margin-right: 10%;
-
-}
-
-.dropdown-toggle {
-  display: block;
-}
-
-.profile-heading {
-  margin-top: 2%;
-}
-
-.favs {
-  margin-left: 30px; 
-}
-
-.dislikes {
-  margin-right: 50px; 
-}
-
+  margin: 0;
+}*/
